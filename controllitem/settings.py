@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party libs
+    "rest_framework",
+    'drf_yasg',
     # system apps
     'controllitem.store',
 ]
