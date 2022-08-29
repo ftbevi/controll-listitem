@@ -29,13 +29,13 @@ migrations:
 dbupdate: migrations migrate
 
 dbunaccent:
-	docker-compose exec db psql -U manageinvestiments -c "CREATE EXTENSION IF NOT EXISTS UNACCENT;"
+	docker-compose exec db psql -U controllitem -c "CREATE EXTENSION IF NOT EXISTS UNACCENT;"
 
 fixtures:
-	docker-compose run --rm web python manage.py loaddata management/store/fixtures/store.json
+	docker-compose run --rm web python manage.py loaddata controllitem/store/fixtures/store.json
 
 dump:
-	docker-compose run web python manage.py dumpdata --format=json store.Investiment > management/store/fixtures/store.json
+	docker-compose run web python manage.py dumpdata --format=json store.Investiment > controllitem/store/fixtures/store.json
 
 services:
 	docker-compose up -d db
